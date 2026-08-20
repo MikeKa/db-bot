@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🤖 Trading Bot v4.0</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="header">
+            <div>
+                <h1>🤖 TRADING BOT <span class="version">v4.0</span></h1>
+            </div>
+            <div class="header-controls">
+                <span class="status-badge" id="statusBadge">● STOPPED</span>
+                <span class="uptime" id="uptime">⏱ 0s</span>
+            </div>
+        </header>
+
+        <!-- GLOBAL CONTROLS -->
+        <section class="controls">
+            <button class="btn btn-start" id="btnStart" onclick="startBot()">▶ START BOT</button>
+            <button class="btn btn-stop" id="btnStop" onclick="stopBot()" disabled>■ STOP BOT</button>
+            <button class="btn btn-cancel" id="btnCancel" onclick="cancelAllOrders()" disabled>✕ CANCEL ALL</button>
+            <button class="btn btn-refresh" onclick="refreshAll()">⟳ REFRESH ALL</button>
+            <a href="stats" class="btn btn-stats">📊 STATS</a>
+        </section>
+
+        <!-- STATS ROW -->
+        <section class="stats-row">
+            <div class="stat-item">
+                <span class="stat-value green" id="statStrategies">0</span>
+                <span class="stat-label">Strategies</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value green" id="statActiveOrders">0</span>
+                <span class="stat-label">Active Orders</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value blue" id="statPending">0</span>
+                <span class="stat-label">Pending</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value yellow" id="statHistory">0</span>
+                <span class="stat-label">History</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value blue" id="statQueue">0</span>
+                <span class="stat-label">Queue Size</span>
+            </div>
+        </section>
+
+        <!-- CONNECTIONS - ГЛОБАЛЬНЫЙ БЛОК -->
+        <section class="card">
+            <div class="card-title">🔌 CONNECTIONS</div>
+            <div class="connection-status">
+                <div class="conn-item">
+                    <span class="conn-label">Market WS</span>
+                    <span class="conn-value" id="wsMarket">🔴 Disconnected</span>
+                </div>
+                <div class="conn-item">
+                    <span class="conn-label">TX WS</span>
+                    <span class="conn-value" id="wsTransactions">🔴 Disconnected</span>
+                </div>
+                <div class="conn-item">
+                    <span class="conn-label">Auth</span>
+                    <span class="conn-value" id="authStatus">🔴 Invalid</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRATEGY TABS -->
+        <section class="tabs-section">
+            <div class="tabs-header" id="tabsHeader"></div>
+            <div class="tab-content" id="tabContent"></div>
+        </section>
+
+        <!-- LOG -->
+        <section class="card log-card">
+            <div class="card-title">📝 LOG</div>
+            <div class="log" id="log">
+                <div class="log-line info">[System] Trading Bot v4.0 ready</div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <span id="timestamp">Last update: —</span>
+            <span>🤖 Trading Bot v4.0</span>
+        </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

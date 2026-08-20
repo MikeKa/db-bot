@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>📊 Trading Bot v4.0 - Statistics</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container"><header class="header"><div><a href="." class="back-link" style="color:#60a5fa;text-decoration:none;">← Back</a><h1>📊 STATISTICS</h1></div>
+<div class="header-controls"><span class="live-badge" style="color:#4ade80;font-weight:bold;">● LIVE</span><button class="btn btn-refresh" onclick="updateStats()">⟳ REFRESH</button></div></header>
+<section class="stats-row">
+<div class="stat-item"><span class="stat-value green" id="totalStrategies">0</span><span class="stat-label">Strategies</span></div>
+<div class="stat-item"><span class="stat-value green" id="activeStrategies">0</span><span class="stat-label">Active</span></div>
+<div class="stat-item"><span class="stat-value yellow" id="uptime">0s</span><span class="stat-label">Uptime</span></div>
+<div class="stat-item"><span class="stat-value blue" id="memory">0MB</span><span class="stat-label">Memory</span></div>
+</section>
+<footer class="footer"><span>Auto-update every 2s</span><span id="timestamp">Last update: —</span></footer>
+</div>
+<script src="js/stats.js"></script>
+</body>
+</html>
